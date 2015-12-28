@@ -1,0 +1,38 @@
+   <!--#include virtual="navbar.shtml" -->
+
+<h1 class="page-header">Create Menu Item</h1>
+	<form class="form" ng-init="MenuItemObj={}" ng-submit="create_menu_item(MenuItemObj)">
+		<input type="text" class="w3-input" required ng-model="MenuItemObj.name" placeholder="Item Name">
+		<input type="number" class="w3-input" required ng-model="MenuItemObj.price" placeholder="Price">
+		<br>
+		<input type="submit" class="btn w3-teal w3-btn">
+	</form>
+
+<br>
+<hr>
+<br>
+
+<h1>Edit Menu Items</h1>
+
+<div ng-hide="menu_item_list">
+	<h2>No Menu Items.</h2>
+</div>
+
+<table ng-show="menu_item_list" class="table table-bordered table-hover table-striped text-center">
+	<tr>
+		<th>Id</th>
+		<th>Name</th>
+		<th>Price</th>
+		<th>Submit</th>
+		<th>Delete</th>
+	</tr>
+	<tr ng-repeat="x in menu_item_list">
+
+			<td>{{x.id}}</td>
+			<td><input type="text" id='name[{{$index}}]' required value={{x.name}}></td>
+			<td><input type="text" id='price[{{$index}}]' required value={{x.price}}></td>
+			<td><input type="submit" class="btn btn-primary" ng-click="update_menu_item($index)"></td>
+			<td><button class="btn btn-danger" ng-click="delete_menu_item($index)" >Delete</button></td>
+	</tr>
+		
+</table>

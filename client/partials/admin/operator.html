@@ -1,0 +1,35 @@
+<h1>Edit Operators</h1>
+
+<div ng-hide="operator_list">
+	<h2>No Operators.</h2>
+</div>
+
+<table ng-show="operator_list" class="table table-bordered table-hover table-striped text-center">
+	<tr>
+		<th>Id</th>
+		<th>Username</th>
+		<th>Password</th>
+		<th>Submit</th>
+		<th>Delete</th>
+	</tr>
+	<tr ng-repeat="x in operator_list">
+
+			<td>{{x.id}}</td>
+			<td><input type="text" id='userName[{{$index}}]' required value={{x.name}}></td>
+			<td><input type="text" id='password[{{$index}}]' required value={{x.password}}></td>
+			<td><input type="submit" class="btn btn-primary" ng-click="update_employee($index)"></td>
+			<td><button class="btn btn-danger" ng-click="delete_employee($index)" >Delete</button></td>
+	</tr>
+		
+</table>
+
+<br>
+<hr>
+<br>
+<h1 class="page-header">Create Operator</h1>
+	<form class="form" ng-init="operObj={}" ng-submit="create_operator(operObj)">
+		<input type="text" class="w3-input" required ng-model="operObj.userName" placeholder="User Name">
+		<input type="password" class="w3-input" required ng-model="operObj.password" placeholder="Password">
+		<br>
+		<input type="submit" class="btn w3-teal w3-btn">
+	</form>
