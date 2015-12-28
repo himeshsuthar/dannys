@@ -1,0 +1,14 @@
+DB & PHP
+
+
+Login
+	-Admin
+		-insert update items and their 			price
+		-create new operator user.
+		-delete items from menu.
+
+	-Operator
+		-make bills
+			-price and quantity.
+		-edit orders
+		
