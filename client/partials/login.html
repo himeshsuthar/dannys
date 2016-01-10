@@ -1,11 +1,21 @@
-<h1 class="page-header"> Login 
-</h1>
 
 
-<div >
-	<form class="form" ng-submit="doLogin()">
-		<input type="text" ng-model="userName" class="form-control" required placeholder="User Name">
-		<input type="password" ng-model="password" class="form-control" required placeholder="Password">
-		<button type="submit" class="btn btn-primary">Submit</button>
-	</form>
+
+<div class="row" style="padding-top:10%;">
+	<div class="col-md-4"></div>
+	<div class="col-md-4 w3-card-12 well-lg remove-padding">
+		<br>
+		<div style="padding:20px; padding-top:0px;">
+			<h3>Login.</h3>
+			<form class="form" ng-submit="doLogin()">
+				<input type="text" ng-model="userName" class="form-control" required placeholder="User Name">
+				<br>
+				<input type="password" ng-model="password" class="form-control" required placeholder="Password">
+				<br>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+	</div>
+	<div class="col-md-4"></div>
+
 </div>

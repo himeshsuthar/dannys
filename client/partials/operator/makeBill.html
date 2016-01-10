@@ -1,0 +1,21 @@
+<h1  class="page-header">Bill
+	<span><button class="btn-success pull-right" id="logoutBtn" data-toggle="modal" data-target="#myModal">Logout</button></span>
+</h1>	
+
+
+	<table class="table table-responsive w3-table w3-light-grey">
+		<tr>
+			<th>Item Name</th>
+			<th>Quantity</th>
+			<th>Price</th>
+			<th>Status</th>
+		</tr>
+		<tr ng-repeat="x in orders">
+			<td ng-repeat="y in x">
+				{{y}}
+			</td>
+		</tr>
+	</table>
+
+
+	<button class="btn btn-primary" ng-click="billPaid()">Paid.</button>

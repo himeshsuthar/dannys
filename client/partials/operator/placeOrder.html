@@ -1,4 +1,12 @@
-<h2>Select Items And Enter Quantity<h2>
+<a class="btn w3-btn w3-blue" href="http://192.168.0.157/Dannys/client/#/placeOrder">Place Order</a>
+<a class="btn w3-btn w3-blue" href="http://192.168.0.157/Dannys/client/#/operator/showOrder">Show Order</a>
+<br>
+
+
+
+<h1  class="page-header">Select Items And Enter Quantity
+	<span><button class="btn-success pull-right" id="logoutBtn" data-toggle="modal" data-target="#myModal">Logout</button></span>
+</h1>	
 
 <style type="text/css">
 th{
@@ -26,11 +34,11 @@ th{
 				</select>
 			</td>
 			<td>
-				<input type="text" ng-model="x.quantity">
+				<input type="number" style=" width: 30px;" ng-model="x.quantity" ng-change="updateTotal({{$index}})">
 			</td>
 
 			<td>
-				
+				{{x.price}}
 			</td>
 
 			<td>
@@ -38,7 +46,7 @@ th{
 			</td>
 		</tr>
 		<tr>
-			<td colspan=4>
+			<td colspan=6>
 				<input type="button" ng-click="genNewRow()" value="Add">
 			</td>
 		</tr>
@@ -46,3 +54,9 @@ th{
 	</table>
 	
 </form>
+
+
+
+<div class="w3-container well-lg">
+	<button class="btn btn-warning" ng-click="submit_order()">Submit Order</button>
+</div>

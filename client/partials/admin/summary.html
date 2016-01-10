@@ -1,1 +1,122 @@
-summary.html
+<style>
+	hr{
+		border-width: 2px;
+		border-color:black;
+	}
+</style>
+<h1 class="page-header">Summary
+<span><button class="btn-success pull-right" id="logoutBtn" data-toggle="modal" data-target="#myModal">Logout</button></span></h1>
+
+<button class="btn w3-btn w3-blue" ng-click="toggle('FromTo')">FromTo.</button>
+<button class="btn w3-btn w3-blue" ng-click="toggle('SummaryToday')">Summary Today.</button>
+<button class="btn w3-btn w3-blue" ng-click="toggle('ItemWiseTotal')">Itemwise total.</button>
+
+<fieldset ng-show="FromToShow">
+	<legend>Invoice analysis</legend>
+	<form ng-submit="getAllOrdersFromTo()">
+
+
+		<div class="form-group">
+			 <label>From:</label>
+			<datepicker date-format="yyyy-M-dd">
+			  <input class="form-control" placeholder='From Date' ng-model="FromDate" type="text"/>
+			</datepicker>
+		</div>	
+		<div class="form-group">
+			  <label>To:</label>
+			<datepicker date-format="yyyy-M-dd">
+			  <input class="form-control" placeholder='To Date' ng-model="ToDate" type="text"/>
+			</datepicker>
+		</div>
+
+
+		<button type="submit" class="btn btn-warning">Submit</button>
+
+
+	</form>
+<table class="table table-responsive table-hover table-striped">
+	
+	
+	<tr dir-paginate="x in ordersFromTo |orderBy:sortKey:reverse|filter:search|itemsPerPage:5">
+				<td>{{x.name}}</td>
+				<td>{{x.Quantity}}</td>
+				<td>{{x.price}}</td>
+
+		</tr>
+
+	
+
+</table>
+<dir-pagination-controls
+        max-size="5"
+        direction-links="true"
+        boundary-links="true" >
+    </dir-pagination-controls>
+<div class="w3-container w3-red w3-padding-16">
+	<h3 class="pull-right">Total of the Day->&#x20b9; {{totalOfFromTo}}</h3>
+</div>
+	<br><br><hr><hr>
+</fieldset>
+
+
+
+
+
+<fieldset ng-show="SummaryTodayShow">
+	<legend>Summary of {{today}}</legend>
+<table class="table table-responsive table-hover table-striped">
+	
+	<tr dir-paginate="x in orders |orderBy:sortKey:reverse|filter:search|itemsPerPage:5">
+				<td>{{x.name}}</td>
+				<td>{{x.Quantity}}</td>
+				<td>{{x.price}}</td>
+
+		</tr>
+
+</table>
+<dir-pagination-controls
+        max-size="5"
+        direction-links="true"
+        boundary-links="true" >
+    </dir-pagination-controls>
+<div class="w3-container w3-red w3-padding-16">
+	<h3 class="pull-right">Total of the Day->&#x20b9; {{totalOfDay}}</h3>
+</div>
+	<br><br><hr><hr>
+
+</fieldset>
+
+
+
+
+
+
+
+<!-------------------------------Itemwise Total ------------------------------>
+
+<fieldset ng-show="ItemWiseTotalShow">
+	<legend>Item wise total </legend>
+<table class="table table-responsive table-hover table-striped">
+	
+	<tr dir-paginate="x in ItemWiseOrders |orderBy:sortKey:reverse|filter:search|itemsPerPage:5">
+				<td>{{x.name}}</td>
+				<td>{{x.Quantity}}</td>
+				<td>{{x.price}}</td>
+
+		</tr>
+</table>
+	
+  <dir-pagination-controls
+        max-size="5"
+        direction-links="true"
+        boundary-links="true" >
+    </dir-pagination-controls>
+
+    
+<div class="w3-container w3-red w3-padding-16">
+	<h3 class="pull-right">Total of the Day->&#x20b9; {{totalOfItemWiseOrders}}</h3>
+</div>
+	<br><br><hr><hr>
+
+</fieldset>
+
