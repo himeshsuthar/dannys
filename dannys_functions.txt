@@ -1,6 +1,6 @@
 DB & PHP
-
-
+ANiket Pandya
+Tirthraj Barot
 Login
 	-Admin
 		-insert update items and their 			price
@@ -12,3 +12,7 @@ Login
 			-price and quantity.
 		-edit orders
 		
+
+
+
+		New Changes very much.

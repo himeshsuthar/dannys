@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'danny';
+  font-style: normal;
+  font-weight: 400;
+  src: local('danny'), url("dannyFont.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+.main-row{
+				min-height: 540px;
+}
+.danny-blue{
+	bbackground: rgba(150,198,243,1);
+	background: -moz-linear-gradient(-45deg, rgba(150,198,243,1) 0%, rgba(10,62,117,1) 0%, rgba(14,87,164,1) 5%, rgba(18,112,211,1) 42%, rgba(16,101,190,1) 53%, rgba(13,77,145,1) 77%);
+	background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(150,198,243,1)), color-stop(0%, rgba(10,62,117,1)), color-stop(5%, rgba(14,87,164,1)), color-stop(42%, rgba(18,112,211,1)), color-stop(53%, rgba(16,101,190,1)), color-stop(77%, rgba(13,77,145,1)));
+	background: -webkit-linear-gradient(-45deg, rgba(150,198,243,1) 0%, rgba(10,62,117,1) 0%, rgba(14,87,164,1) 5%, rgba(18,112,211,1) 42%, rgba(16,101,190,1) 53%, rgba(13,77,145,1) 77%);
+	background: -o-linear-gradient(-45deg, rgba(150,198,243,1) 0%, rgba(10,62,117,1) 0%, rgba(14,87,164,1) 5%, rgba(18,112,211,1) 42%, rgba(16,101,190,1) 53%, rgba(13,77,145,1) 77%);
+	background: -ms-linear-gradient(-45deg, rgba(150,198,243,1) 0%, rgba(10,62,117,1) 0%, rgba(14,87,164,1) 5%, rgba(18,112,211,1) 42%, rgba(16,101,190,1) 53%, rgba(13,77,145,1) 77%);
+	background: linear-gradient(135deg, rgba(150,198,243,1) 0%, rgba(10,62,117,1) 0%, rgba(14,87,164,1) 5%, rgba(18,112,211,1) 42%, rgba(16,101,190,1) 53%, rgba(13,77,145,1) 77%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#96c6f3', endColorstr='#0d4d91', GradientType=1 );
+}
+.white-font{
+	color:white;
+}
+.remove-padding{
+	padding: 0px;
+}
+
+
+.page-header{
+	background-color:rgba(0,0,120,0.9);
+	padding:10px;
+	color:white;
+	font-family:verdana;
+	font-style: italic;
+	font-size: 20px;
+	border-radius: 7px;
+}
+#logoutBtn{
+	padding:2px; 
+	font-size:16px; 
+	height:30px; 
+	margin-top:-3px; 
+	width:90px; 
+	font-family:times;
+}
+
+.th{
+	text-align: center;
+}

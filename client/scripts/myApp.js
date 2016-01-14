@@ -1,4 +1,4 @@
-angular.module('dannysApp',['ngRoute','ngStorage']);
+angular.module('dannysApp',['ngRoute','ngStorage','ngCookies','720kb.datepicker','angularUtils.directives.dirPagination']);
 
 
 angular.module('dannysApp').config(['$routeProvider',function($routeProvider){
@@ -12,6 +12,14 @@ angular.module('dannysApp').config(['$routeProvider',function($routeProvider){
 		.when('/placeOrder',{
 			templateUrl:"partials/operator/placeOrder.html",
 			controller:"placeOrderCtrl"
+		})
+		.when('/operator/showOrder',{
+			templateUrl:"partials/operator/showOrder.html",
+			controller:"showOrderCtrl"
+		})
+		.when('/operator/makeBill',{
+			templateUrl:"partials/operator/makeBill.html",
+			controller:"makeBillCtrl"
 		})
 		.when('/admin',{
 			templateUrl:"partials/admin/welcomeAdmin.html",
