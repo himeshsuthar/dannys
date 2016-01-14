@@ -198,7 +198,7 @@ angular.module('dannysApp')
 
 
 angular.module('dannysApp')
-	.controller('makeBillCtrl',function($scope,$localStorage,$window,BillingFactory){
+	.controller('makeBillCtrl',function($scope,$localStorage,$window,BillingFactory,Session){
 
 
 		Session.check();
